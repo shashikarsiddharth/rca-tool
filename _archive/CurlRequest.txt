@@ -1,0 +1,20 @@
+> Todos Endpoint
+
+    >> GET Request:
+        curl -X GET http://172.17.0.1:5000/rcas
+
+    >> POST Request:
+        curl -d '{"title": "Sys Abort", "incident_report_for": "qwerty is good", "incident_datetime": "2020-1-1", "incident_reported_by": "James", "report_datetime": "2020-1-1", "fixed_on": "2020-1-1", "outage_duration": "2020-1-1", "outage_severity": "High", "sre_on_call": "James", "summary": "System crashed due to human error.", "root_cause_analysis": "Human error compromised the system.", "error_message": "failed transactions", "bugs": "none", "recovery": "avoid such mistakes", "workaround": "used second server", "closing_remarks": "issued resolved", "action_items": "none", "comment": "none"}' -X POST http://172.17.0.1:5000/rcas
+
+
+> Todo Endpoint
+
+    >> GET Request
+        curl -X GET http://172.17.0.1:5000/rca/1
+
+    >> PUT Request:
+        curl -d '{"title":"System Failure Tesla"}' -X PUT http://172.17.0.1:5000/rca/1
+
+    >> DELETE Request
+        curl -X DELETE http://172.17.0.1:5000/rca/1
+

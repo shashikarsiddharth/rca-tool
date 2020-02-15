@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Load RCA Report</title>
+</head>
+
+<body>
+    <h2>Load RCA Report</h2>
+
+    {% for ele in info %}
+    {{ ele }}
+    {% endfor %}
+
+    <!-- <button type="button" onclick="loadDoc()">Request data</button> -->
+
+
+    <!-- <script>
+        function loadDoc() {
+            fetch('http://172.17.0.1:5000/rcas')
+            .then(res => console.log(res))         
+        }
+    </script> -->
+</body>
+
+</html>

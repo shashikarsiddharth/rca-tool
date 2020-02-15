@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Submit RCA Report</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#submit_btn").click(function (e) {
+                var MyForm = $("#ajaxform").serializeJSON();
+                console.log(MyForm);
+
+                $.ajax(
+                    {
+                        type: "POST",
+                        url: "http://172.17.0.1:5000/rcas",
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify({ "valArray" : MyForm})
+                    });
+                e.preventDefault();
+                console.log("hi")
+
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>Submit RCA Report</h1>
+    <form name="ajaxform" id="ajaxform" method="POST">
+        <p><input type="text" name="title" placeholder="Title" required /></p>
+        <p><input type="text" name="incident_report_for" placeholder="Incident Report For" required /></p>
+        <p><input type="text" name="incident_datetime" placeholder="Incident Datetime" required /></p>
+        <p><input type="text" name="incident_reported_by" placeholder="Incident_Reported By" required /></p>
+        <p><input type="text" name="report_datetime" placeholder="Report Datetime" required /></p>
+        <p><input type="text" name="fixed_on" placeholder="Fixed On" required /></p>
+        <p><input type="text" name="outage_duration" placeholder="Outage Duration" required /></p>
+        <p><input type="text" name="outage_severity" placeholder="Outage Severity" required /></p>
+        <p><input type="text" name="sre_on_call" placeholder="Sre On Call" required /></p>
+        <p><input type="text" name="summary" placeholder="Summary" required /></p>
+        <p><input type="text" name="root_cause_analysis" placeholder="Root Cause Analysis" required /></p>
+        <p><input type="text" name="error_message" placeholder="Error Message" /></p>
+        <p><input type="text" name="bugs" placeholder="Bugs" /></p>
+        <p><input type="text" name="recovery" placeholder="Recovery" required /></p>
+        <p><input type="text" name="workaround" placeholder="Workaround" /></p>
+        <p><input type="text" name="closing_remarks" placeholder="Closing Remarks" /></p>
+        <p><input type="text" name="action_items" placeholder="Action Items" /></p>
+        <p><input type="text" name="comment" placeholder="Comment" /></p>
+        <p><input type="submit" value="submit" id="submit_btn" /></p>
+    </form>
+    <!-- <script>
+        $('form').serialize();
+        $('form').find('input').each(function( key, value ) {
+            console.log(value);
+        });
+    </script> -->
+</body>
+
+</html>

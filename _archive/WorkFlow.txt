@@ -1,0 +1,7 @@
+Postgre Nomad
+Postgre - Setup nomad
+Migrate Nomad Job
+Todo (App.py)
+
+
+DockerFile -> Nomad Job (Migrate and Todo)

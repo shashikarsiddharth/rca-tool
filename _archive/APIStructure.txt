@@ -1,0 +1,8 @@
+API structure:
+
+/rcas (GET)         -> return list of all rcas
+/rcas (POST)        -> add new rca (error handling)
+/rca/<id> (GET)     -> return rca item with respective id.
+/rca/<id> (PUT)     -> update rca item with respective id.
+/rca/<id> (DELETE)  -> delete rca item will be deleted id.
+ 
